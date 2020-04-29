@@ -4,5 +4,8 @@ for i <- 1 to m do
   for j <- 1 to n do
     for i <- 1 to n do
       if ai = bj then -- len(i, j) = len(i - 1, j - 1) + 1
-                      -- prev(i, j) = "左上"
-      else if len (i - 1, j
+                      -- prev(i, j) = "左上" //prev = 上一個
+      else if len (i - 1, j) >=  len(i, j - 1)
+                then -- len(i, j) = len (i - 1, j)
+                     -- prev(i, j) = "上面"
+      else -- len(i, j)
