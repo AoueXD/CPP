@@ -1,4 +1,4 @@
-source = https://blog.darkthread.net/blog/write-c-with-vscode/
+source => https://blog.darkthread.net/blog/write-c-with-vscode/
 
 #include <stdio.h>
 #include <stdlib.h>
