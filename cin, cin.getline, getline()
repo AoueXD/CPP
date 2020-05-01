@@ -1,0 +1,89 @@
+/*————-Basic Input/Output————-*/
+#include<iostream>
+#include<string>
+#include<sstream>
+
+using namespace std;
+
+int main(){
+	
+	int age;
+	//standard input(cin);
+	cout << "Cin >> your age: ";
+	cin >> age; // ***系統會讓第26行的getline沒反應 也就是說寫getline之前如果有cin ，  就必須寫兩次getline 
+	cout << endl;
+	cout << "your age is: " << age;
+	
+	cout << endl << endl; 
+	
+	/*如果把第9行到第19註解起來 第26的getline就會有效 */
+	 
+	string name; 
+	
+	cout << "cin >> Your name: ";
+	cout << endl;
+  
+	//name = "\n"; //做不做好像沒差 但是有人說要做; = 一個清除的動作
+	
+	cout << "(getline) \n\n";
+	
+	getline(cin, name); //第一次geline沒反應 第二次以後的才有效
+	 
+	
+	cout << "first getlin was gone.\n";
+	cout << endl << "now cin >> second getline: " << name; // *** 只打一次getline就沒有東西在name      
+	
+	getline(cin, name);
+	cout << "second getline: " << name;
+	cout << endl;
+	
+	cout << "third getline: ";
+	getline(cin, name);
+	cout << "third name is: " << name << endl << endl;
+	
+	name = "0000000\0" ;
+	cout << "set the name to 0000000\0" << endl << endl;
+	cout << "name is: " << name << endl <<endl;
+	
+	cout << "Final getline(name): " << endl;
+	getline(cin, name);
+	
+	cout << endl << endl << "name is: " << name;
+	
+	cout << "\n\n\n";
+	 
+	string namess;
+	
+	int aaaa;
+	cin >> aaaa;
+	
+	cout << "get in the namess: ";
+	getline(cin, namess);
+	getline(cin, namess);
+  
+  
+  
+  cout << "\n\n";
+  
+  
+  
+  char str[100000000];
+	
+	int i=0,word=0; 
+	
+	cin.getline(str,100000000,'#');
+	
+	while(str[i]!='\0'){
+		if((65 <= str[i] && str[i] <= 90 ) || (97 <= str[i] && str[i] <= 122))
+			if(str[i+1]==' ' || str[i+1]=='\n' || str[i+1]=='\0')
+				word++;
+		cout<<str[i++];	
+	}
+	
+	
+	
+	
+	
+	cout<< endl << "word = " << word << endl;
+	
+}
