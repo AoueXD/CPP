@@ -11,6 +11,7 @@ int main(){
 	//standard input(cin);
 	cout << "Cin >> your age: ";
 	cin >> age; // ***系統會讓第26行的getline沒反應 也就是說寫getline之前如果有cin ，  就必須寫兩次getline 
+	/*cint >> noskipws >> age;   可以讓系統不要略過空白，也就是輸入的空白也會輸出
 	cout << endl;
 	cout << "your age is: " << age;
 	
