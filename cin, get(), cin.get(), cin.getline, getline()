@@ -18,7 +18,12 @@ int main(){
 	cout << endl << endl; 
 	
 	/*如果把第9行到第19註解起來 第26的getline就會有效 */
-	 
+	
+	
+	
+	/*cin.getline()也會吃到上一個cin.get()的//n*/
+	
+	
 	string name; 
 	
 	cout << "cin >> Your name: ";
