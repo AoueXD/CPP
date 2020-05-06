@@ -22,6 +22,7 @@ int main(){
 	
 	
 	/*cin.getline()也會吃到上一個cin.get()的//n*/
+	/*138行*/
 	
 	
 	string name; 
@@ -129,8 +130,19 @@ int main(){
 	 /*	
 	 cin.get(ch,10,'\\n');
 	 	=
-	cin.get(ch,10);*/
-	 return 0;
+	cin.get(ch,10);
+	*/
+
+	 
+	 
+	char str11[100];
+	char str22[100];
+	
+	cin.get(str22 , 100);
+	cin.getline(str11 , 100);
+	
+	cout << str11 << " "<<str22;
+	
+
+	return 0;
 }
-
-
