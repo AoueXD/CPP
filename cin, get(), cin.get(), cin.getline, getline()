@@ -92,6 +92,9 @@ int main(){
 	
 	cout << endl << endl << endl;
 	
+	/*cin.getlin 會保留 換行 而cin.get不會*/
+	
+	
 	/*cin.get = cin 但是只有遇到^Z才會結束cin*/
 
 
