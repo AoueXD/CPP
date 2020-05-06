@@ -92,21 +92,40 @@ int main(){
 	
 	cout << endl << endl << endl;
 	
-	/*cin.getlin 會保留 換行 而cin.get不會*/
+	/*cin.getlin 會保留 換行 而cin.get不會
 	
-	/*各有優點，應該說取決於你的用途*/
+	cin.getline() 讀取輸入直到'\ n'並停止
+
+	cin.get() 讀取輸入內容直到'\ n'並將'\ n'保留在流中
+	
+	各有優點，應該說取決於你的用途*/
 	
 	/*cin.get = cin 但是只有遇到^Z才會結束cin*/
 
 
-	int cget;
+	int c;
 	cout<<"enter a sentence:"<<endl;
 	while((c=cin.get())!=EOF)
 		cout.put(c);
 		
-		
-
-	return 0;
+	
+  	 char c;
+  	 cout<<"enter a sentence:"<<endl;
+  	 while(cin.get(c))  //读取一个字符赋给字符变量c,如果读取成功,cin.get(c)为真
+  	 {cout.put(c);}
+  	 cout<<"end"<<endl;
+	
+	
+	 char ch[20];
+	 cout<<"enter a sentence:"<<endl;
+	 cin.get(ch,10,'\\n');//指定换行符为终止字符
+	 cout<<ch<<endl;
+	 
+	 /*	
+	 cin.get(ch,10,'\\n');
+	 	=
+	cin.get(ch,10);*/
+	 return 0;
 }
 
 
