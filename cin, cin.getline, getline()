@@ -87,4 +87,21 @@ int main(){
 	
 	cout<< endl << "word = " << word << endl;
 	
+	
+	
+	
+	cout << endl << endl << endl;
+	
+	#include <iostream>
+
+	int cget;
+	cout<<"enter a sentence:"<<endl;
+	while((c=cin.get())!=EOF)
+		cout.put(c);
+		
+		
+
+	return 0;
 }
+
+
