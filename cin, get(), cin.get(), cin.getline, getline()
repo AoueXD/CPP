@@ -94,6 +94,7 @@ int main(){
 	
 	/*cin.getlin 會保留 換行 而cin.get不會*/
 	
+	/*各有優點，應該說取決於你的用途*/
 	
 	/*cin.get = cin 但是只有遇到^Z才會結束cin*/
 
