@@ -1,15 +1,22 @@
 #include <iostream>
-#include <cstdlib>
+#include <string>
+#include <sstream>
 
 using namespace std;
 
-
 int main() {
 
-
-	system("ping 8.8.8.8");
+	int c;
 	
-
-	return 0;
-}
-
+	stringstream ss;
+	
+	string s = "10 20 30 40";
+	
+	cout <<  s;//
+	
+	ss << s;
+	
+	while(ss >> c) {
+		cout << c << endl;
+	}
+} 
