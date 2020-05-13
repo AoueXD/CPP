@@ -1,0 +1,33 @@
+class Circle //nonstatic => 物件	，  Static => Class
+{
+	double r, area, cir;
+	
+	void compArea() {
+		area = Math.PI * r * r;
+	}
+	
+	void compCir() {
+		cir = 2 * Math.PI * r;
+	}
+	void show() {
+		System.out.printf("面積 = %10.4f 周長 = %10.4f\n", area, cir);
+	}
+}
+public class CC {
+		
+	
+	public static void main (String[] argv) {
+		
+		Circle A =new Circle();
+		A.r = 10;
+		A.compArea();
+		A.compCir();
+		A.show();
+		Circle B =new Circle();
+		B.r = 5;
+		B.compArea();
+		B.compCir();
+		B.show();
+		
+	}
+}
