@@ -1,0 +1,120 @@
+import java.util.*;
+
+
+class Node {
+	
+	
+	int data;
+	Node next;
+	
+	Node(int data)  {
+		this.data = data;
+	}
+}
+
+//p -> head -> null
+public class VFSAEDAEGF {
+	public static void main(String[] argv) {
+		Scanner sc = new Scanner(System.in);
+		
+		
+		Node head = new Node(0);
+		head.next = null;
+		Node p = new Node(23);
+		
+		p.next = head.next;
+		head.next = p;
+		
+		p = new Node(47);
+		p.next = head.next;
+		
+		p = new Node(64);
+		p.next = head.next;
+		
+		head.next = p;
+		p = head.next;
+		
+		
+		System.out.print("Lucky number: ");
+		int LuckyN = sc.nextInt();
+		p = head.next;
+		
+		while(p != null) {
+			System.out.println(p.data);
+			p = p.next;
+			
+			
+		}
+		
+		/*while(p != null) {
+			if(p.data == LuckyN) {
+				System.out.println("Nice! \n");
+				break;
+			}
+			//System.out.println(p.data);
+			p = p.next;
+			
+			
+		}*/
+		
+		
+		System.out.println("IUHIUJFHEWQPFJHIWJF");
+		Node r = head;
+
+		p = head.next;
+		//LOOP: do
+		while(p != null) {
+			if((p.data == LuckyN)) {
+				r.next = p.next;
+				break;
+			}
+			p = head.next;
+		}
+		System.out.println("IUHIUJFHEWQPFJ752737HIWJF");
+		
+		while(true) {
+			System.out.println("1. New data");
+			System.out.println("2. Print data");
+			System.out.println("3. Searching data");
+			System.out.println("4. Delete data");
+			System.out.println("5. Done!");
+			
+			
+			
+			int cmd = sc.nextInt();
+			switch(cmd) {
+				case 1:
+					System.out.println("Key in the data: ");
+					int data = sc.nextInt();
+					p.data = data;
+					//p.next = head;
+					p = p.next;
+					
+					while(p != null) {
+						System.out.println(p.data);
+						p = p.next;
+						
+						
+					}
+					break;
+				case 2:
+					System.out.println("Key in the data: ");
+					data = sc.nextInt();
+					break;
+				case 3:
+					System.out.println("Key in the data: ");
+					data = sc.nextInt();
+					break;
+				case 4:
+					System.out.println("Key in the data: ");
+					data = sc.nextInt();
+					break;
+				case 5:
+					break;
+				default:
+					break;
+			
+			}
+		}
+	}
+}
