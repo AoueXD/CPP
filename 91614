@@ -1,0 +1,42 @@
+class A{
+	 int x;
+	 
+	 A(){
+		 
+	 }
+	 A(int x){
+		 this.x=x;
+	 }
+	 
+	 void show() {
+		 System.out.println(x);
+	 }
+}
+
+class B extends A{
+	int y;
+	
+	B(int x, int y){
+		super(x);
+		this.y=y;
+	}
+	
+	public B() {
+		
+	}
+
+	void show() {
+		System.out.println(x+" "+y);
+	}
+}
+
+public class Test {
+
+	public static void main(String[] argv) {
+		B b= new B();
+		b.x=99;
+		b.y=32;
+		b.show();
+	}
+
+}
