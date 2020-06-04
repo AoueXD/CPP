@@ -7,10 +7,28 @@ void OutPut(int size, string a[]) {
 	for(int i = 0; i < size; i++)
 		cout << a[i] << endl;
 }
-void insertion_sort(int size, string a[]); //¥Î´¡¤J±Æ§Ç
+void insertion_sort(int size, string a[]); //ç”¨æ’å…¥æ’åº
 void Linear_Search(string a[], string key, int size);
-void Recursion_Binary_Search(string a[], string key, const int left, const int right); //¦a¦^ 
-void Iterative_Binary_Search(string a[], string key, int size);//½º±a 
+void Recursion_Binary_Search(string a[], string key, const int left, const int right); //åœ°å› 
+void Iterative_Binary_Search(string a[], string key, int size);//è¶å¸¶ 
+
+int binary_search(int *numbers, int n, int val) { 
+	int left = 0, right = n - 1; 
+	while(left < right) {
+		 int middle = (left + right) / 2; 
+		if (numbers[middle] < val) { left = middle + 1; } 
+		else { right = middle - 1; } 
+		} 
+	return right; 	
+} 
+int binary_search(const int arr[], int start, int end, int key) { 
+	if (start > end) return -1; 
+	int mid = start + (end - start) / 2; //ç›´æ¥å¹³å‡å¯èƒ½æœƒæº¢ä½ï¼Œæ‰€ä»¥ç”¨æ­¤ç®—æ³• 
+	if (arr[mid] > key) return binary_search(arr, start, mid - 1, key); 
+	else if (arr[mid] < key) return binary_search(arr, mid + 1, end, key); 
+	else return mid; //æœ€å¾Œæª¢æ¸¬ç›¸ç­‰æ˜¯å› ç‚ºå¤šæ•¸æœå°‹ç‹€æ³ä¸æ˜¯å¤§æ–¼è¦ä¸å°±å°æ–¼ 
+} 
+
 
 int main(){
 	srand(time(0));
@@ -43,7 +61,7 @@ int main(){
 		
 			for(i = 0; i < size[s]; i++) {
 				for(int j = 0; j < 6; j++)
-					d[j] = b[(rand () % 26)];//¦b26­Ó­^¤å¦r¤¸¤¤ÀH¾÷¨ú¤@­Ó 
+					d[j] = b[(rand () % 26)];//åœ¨26å€‹è‹±æ–‡å­—å…ƒä¸­éš¨æ©Ÿå–ä¸€å€‹ 
 						e[i] = d;
 				//cout << e[i] << endl;
 			}
@@ -57,7 +75,7 @@ int main(){
 				case 'r':
 					for(int i = 0; i < size[s]; i++) {
 						for(int j = 0; j < 6; j++)
-							cc[j] = b[(rand () % 26)];//¦b26­Ó­^¤å¦r¤¸¤¤ÀH¾÷¨ú¤@­Ó 
+							cc[j] = b[(rand () % 26)];//åœ¨26å€‹è‹±æ–‡å­—å…ƒä¸­éš¨æ©Ÿå–ä¸€å€‹ 
 						key = cc;
 						Recursion_Binary_Search(e, key, 0, size[s] - 1);
 					}
@@ -65,7 +83,7 @@ int main(){
 				case 'l':
 					for(int i = 0; i < size[s]; i++) {
 						for(int j = 0; j < 6; j++)
-							cc[j] = b[(rand () % 26)];//¦b26­Ó­^¤å¦r¤¸¤¤ÀH¾÷¨ú¤@­Ó 
+							cc[j] = b[(rand () % 26)];//åœ¨26å€‹è‹±æ–‡å­—å…ƒä¸­éš¨æ©Ÿå–ä¸€å€‹ 
 						key = cc;
 					Linear_Search(e, key, size[s]);
 					}
@@ -73,7 +91,7 @@ int main(){
 				case 'i':
 					for(int i = 0; i < size[s]; i++) {
 						for(int j = 0; j < 6; j++)
-							cc[j] = b[(rand () % 26)];//¦b26­Ó­^¤å¦r¤¸¤¤ÀH¾÷¨ú¤@­Ó 
+							cc[j] = b[(rand () % 26)];//åœ¨26å€‹è‹±æ–‡å­—å…ƒä¸­éš¨æ©Ÿå–ä¸€å€‹ 
 						key = cc;
 					Iterative_Binary_Search(e, key, size[s]);
 					}
@@ -109,7 +127,7 @@ void Linear_Search(string a[], string key, int size) {
 	int temp;
 	for(int i = 0; i < size; i++) {
 		if(a[i] == key) {
-			cout << "¦b²Ä " << i << " ­Ó§ä¨ì ";
+			cout << "åœ¨ç¬¬ " << i << " å€‹æ‰¾åˆ° ";
 			break;
 		}
 			temp++;
@@ -126,7 +144,7 @@ void Recursion_Binary_Search (string a[], string key, const int left, const int 
 	      return Recursion_Binary_Search(a, key, left, middle - 1);
 	    else if (key > a[middle])
 	      return Recursion_Binary_Search(a, key, middle + 1, right);
-	    else cout  << "¦b²Ä " << middle << " ­Ó§ä¨ì ";
+	    else cout  << "åœ¨ç¬¬ " << middle << " å€‹æ‰¾åˆ° ";
 	}
 	/*else
 		return;*/
@@ -143,7 +161,7 @@ void Iterative_Binary_Search(string a[], string key, int size) {
     		else if 
 				(key > a[middle]) left = middle + 1;
     		else {
-				cout  << "¦b²Ä " << middle << " ­Ó§ä¨ì ";
+				cout  << "åœ¨ç¬¬ " << middle << " å€‹æ‰¾åˆ° ";
 				YoN = true;	//find the key
 				break;
 			}
