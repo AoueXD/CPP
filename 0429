@@ -1,0 +1,58 @@
+import java.util.*;
+
+public class xzz {
+	public static void main(String[] argv) {
+		
+		//System.out.println(kkk(12));
+		//System.out.println(kkk(31, 45, 67));
+		
+		int[][] x = {{1, 2, 3}, {4, 5, 6}};
+		int[][] y = {{1, 2, 3}, {3, 4, 7}};
+		
+		
+		System.out.println("--------------------------------------------------");
+		matrixShow(matixAdd(x, y));
+		
+		
+	}
+	
+	public static int[][] matixAdd(int[][] x, int[][] y){
+		int[][] z = new int[x.length][y.length];
+		for(int i = 0; i < x.length; i++) {
+			for(int j = 0; j < y.length; j++)
+				z[i][j] = x[i][j] + y[i][j];
+		}
+		
+		return z;
+	}
+	
+	public static void matrixShow(int[][] z) {
+		for(int i = 0; i < z.length; i++) {
+			for(int j = 0; j < z.length; j++) {
+				System.out.print(z[i][j]);	
+				System.out.print(" ");
+			}
+			
+			System.out.println();
+		}
+	}
+	
+	public static int kkk(int... x) {
+		int gcd = x[0];
+		for(int i =1; i < x.length; i++)
+			gcd = GCD(gcd, x[i]);
+		
+		return gcd;
+		
+	}
+	
+	public static int GCD(int x, int y) {
+		while(x > 0 && y > 0) {
+			int temp = x % y;
+			x = y;
+			y = temp;
+		}
+		
+		return x;
+	}
+}
